@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zentro — Shop Smarter. Live Better.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="noise-overlay"></div>
+<div id="toast-container"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <span class="logo-mark"><i class="fa-solid fa-bolt"></i></span>
+      <span class="logo-text">Zentro</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#products">Shop</a>
+      <a href="#newsletter">Newsletter</a>
+      <a href="#footer">Contact</a>
+    </nav>
+
+    <div class="search-wrap">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" id="searchInput" placeholder="Search for products, brands..." autocomplete="off">
+      <div class="search-suggestions" id="searchSuggestions"></div>
+    </div>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
+        <i class="fa-solid fa-heart"></i>
+        <span class="badge" id="wishlistCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtn" aria-label="Cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-glow glow-1"></div>
+  <div class="hero-glow glow-2"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow"><i class="fa-solid fa-sparkles"></i> New Season Drop — Up to 40% Off</span>
+      <h1>Shop Smarter.<br><span class="grad-text">Live Better.</span></h1>
+      <p>Curated tech, fashion &amp; lifestyle essentials — handpicked for people who want quality without compromise. Discover Zentro's signature collection today.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary"><i class="fa-solid fa-bag-shopping"></i> Explore Collection</a>
+        <a href="#categories" class="btn btn-ghost">Browse Categories <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>250K+</strong><span>Happy Customers</span></div>
+        <div class="stat"><strong>4.9<i class="fa-solid fa-star"></i></strong><span>Average Rating</span></div>
+        <div class="stat"><strong>24/7</strong><span>Concierge Support</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="floating-card card-main">
+        <img src="https://picsum.photos/seed/zentro-hero/560/560" alt="Featured product">
+        <div class="card-tag">Bestseller</div>
+      </div>
+      <div class="floating-card card-mini card-mini-1">
+        <i class="fa-solid fa-truck-fast"></i>
+        <div><strong>Free Shipping</strong><span>On orders $50+</span></div>
+      </div>
+      <div class="floating-card card-mini card-mini-2">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div><strong>Secure Checkout</strong><span>256-bit encryption</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORIES ============ -->
+<section class="categories" id="categories">
+  <div class="section-head">
+    <span class="eyebrow">Browse</span>
+    <h2>Shop by Category</h2>
+    <p>Find exactly what you're looking for, curated into collections that fit your lifestyle.</p>
+  </div>
+
+  <div class="category-grid" id="categoryGrid">
+    <button class="cat-card active" data-cat="all">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>All</span>
+    </button>
+    <button class="cat-card" data-cat="Electronics">
+      <i class="fa-solid fa-headphones-simple"></i>
+      <span>Electronics</span>
+    </button>
+    <button class="cat-card" data-cat="Fashion">
+      <i class="fa-solid fa-shirt"></i>
+      <span>Fashion</span>
+    </button>
+    <button class="cat-card" data-cat="Home">
+      <i class="fa-solid fa-couch"></i>
+      <span>Home &amp; Living</span>
+    </button>
+    <button class="cat-card" data-cat="Beauty">
+      <i class="fa-solid fa-spa"></i>
+      <span>Beauty</span>
+    </button>
+    <button class="cat-card" data-cat="Sports">
+      <i class="fa-solid fa-dumbbell"></i>
+      <span>Sports</span>
+    </button>
+    <button class="cat-card" data-cat="Accessories">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span>Accessories</span>
+    </button>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="products" id="products">
+  <div class="section-head">
+    <span class="eyebrow">Featured</span>
+    <h2>Trending This Week</h2>
+    <p>Hand-picked favorites, loved by thousands of Zentro shoppers.</p>
+  </div>
+
+  <div class="filter-bar">
+    <div class="result-count"><span id="resultCount">0</span> products</div>
+    <div class="sort-wrap">
+      <label for="sortSelect">Sort by</label>
+      <select id="sortSelect">
+        <option value="default">Featured</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+        <option value="rating">Top Rated</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="product-grid" id="productGrid"></div>
+  <p class="no-results" id="noResults" hidden>No products match your search. Try a different term or category.</p>
+</section>
+
+<!-- ============ PROMO BANNER ============ -->
+<section class="promo">
+  <div class="promo-inner">
+    <div class="promo-text">
+      <span class="eyebrow">Limited Time</span>
+      <h2>Zentro Prime Membership</h2>
+      <p>Unlock early access, exclusive drops &amp; free express delivery on every order.</p>
+      <a href="#newsletter" class="btn btn-primary">Join Prime <i class="fa-solid fa-crown"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="newsletter" id="newsletter">
+  <div class="newsletter-inner">
+    <i class="fa-solid fa-envelope-open-text newsletter-icon"></i>
+    <h2>Stay in the loop</h2>
+    <p>Get 10% off your first order plus exclusive access to new drops and members-only sales.</p>
+    <form id="newsletterForm">
+      <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="footer">
+  <div class="footer-top">
+    <div class="footer-col footer-brand">
+      <a href="#home" class="logo">
+        <span class="logo-mark"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">Zentro</span>
+      </a>
+      <p>Shop Smarter. Live Better. Premium products, honest prices, and an experience designed around you.</p>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="#">Electronics</a>
+      <a href="#">Fashion</a>
+      <a href="#">Home &amp; Living</a>
+      <a href="#">Beauty</a>
+      <a href="#">Sports</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#">Track Order</a>
+      <a href="#">Shipping Info</a>
+      <a href="#">Returns &amp; Exchanges</a>
+      <a href="#">FAQs</a>
+      <a href="#">Contact Us</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About Zentro</a>
+      <a href="#">Careers</a>
+      <a href="#">Press</a>
+      <a href="#">Sustainability</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Zentro. All rights reserved.</p>
+    <div class="payment-icons">
+      <i class="fa-brands fa-cc-visa"></i>
+      <i class="fa-brands fa-cc-mastercard"></i>
+      <i class="fa-brands fa-cc-paypal"></i>
+      <i class="fa-brands fa-cc-apple-pay"></i>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ PRODUCT MODAL ============ -->
+<div class="modal-overlay" id="productModalOverlay">
+  <div class="modal product-modal" id="productModal">
+    <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="drawer-overlay" id="cartOverlay"></div>
+<aside class="drawer" id="cartDrawer">
+  <div class="drawer-head">
+    <h3><i class="fa-solid fa-bag-shopping"></i> Your Cart</h3>
+    <button class="drawer-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-footer" id="cartFooter">
+    <div class="drawer-row">
+      <span>Subtotal</span>
+      <strong id="cartSubtotal">$0.00</strong>
+    </div>
+    <p class="drawer-note">Shipping &amp; taxes calculated at checkout.</p>
+    <button class="btn btn-primary btn-block" id="checkoutBtn">Checkout <i class="fa-solid fa-arrow-right"></i></button>
+  </div>
+</aside>
+
+<!-- ============ WISHLIST DRAWER ============ -->
+<div class="drawer-overlay" id="wishlistOverlay"></div>
+<aside class="drawer" id="wishlistDrawer">
+  <div class="drawer-head">
+    <h3><i class="fa-solid fa-heart"></i> Your Wishlist</h3>
+    <button class="drawer-close" id="wishlistClose"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="drawer-body" id="wishlistBody"></div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
